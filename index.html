@@ -34,6 +34,7 @@
 
     <!-- Critical CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="skeleton-loaders.css">
 
     <!-- Preload model-viewer script -->
     <link rel="modulepreload" href="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js">
@@ -95,6 +96,15 @@
                     <model-viewer src="3d_assets/fantasydragon3dmodel.glb" alt="A 3D fantasy dragon" auto-rotate
                         camera-controls disable-zoom shadow-intensity="1" camera-orbit="45deg 55deg 2.5m"
                         field-of-view="30deg" loading="eager" reveal="auto" class="hero-model-viewer">
+                        <!-- Skeleton loader -->
+                        <div slot="poster" class="model-loading-container">
+                            <div class="skeleton-loader">
+                                <div class="skeleton-shape skeleton-main"></div>
+                                <div class="skeleton-shape skeleton-wing-left"></div>
+                                <div class="skeleton-shape skeleton-wing-right"></div>
+                                <div class="skeleton-shape skeleton-tail"></div>
+                            </div>
+                        </div>
                     </model-viewer>
                 </div>
             </div>

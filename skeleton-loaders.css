@@ -1,0 +1,512 @@
+/* ============================================
+   YOUTUBE-STYLE SKELETON LOADERS
+   Professional, organic shapes - NO BOXES
+   ============================================ */
+
+/* Base shimmer animation */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Shimmer gradient */
+.skeleton-shimmer {
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(99, 102, 241, 0.15) 50%,
+            rgba(255, 255, 255, 0.03) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* ============================================
+   NAVBAR SKELETON
+   ============================================ */
+.navbar.loading .logo,
+.navbar.loading .nav-menu,
+.navbar.loading .hamburger {
+    opacity: 0;
+}
+
+.navbar.loading::before {
+    content: '';
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 24px;
+    border-radius: 12px;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(99, 102, 241, 0.12) 50%,
+            rgba(255, 255, 255, 0.03) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+.navbar.loading::after {
+    content: '';
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 20px;
+    border-radius: 10px;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(99, 102, 241, 0.12) 50%,
+            rgba(255, 255, 255, 0.03) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* ============================================
+   HERO CONTENT SKELETON
+   ============================================ */
+.hero-content.loading {
+    position: relative;
+}
+
+.hero-content.loading .badge,
+.hero-content.loading .headline,
+.hero-content.loading .subheadline,
+.hero-content.loading .hero-actions {
+    opacity: 0 !important;
+}
+
+/* Badge skeleton */
+.hero-content.loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 32px;
+    border-radius: 16px;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(99, 102, 241, 0.15) 50%,
+            rgba(255, 255, 255, 0.03) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Headline skeleton - multiple lines */
+.hero-content.loading::after {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    background:
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(99, 102, 241, 0.15) 50%,
+            rgba(255, 255, 255, 0.03) 100%) 0 0 / 1000px 100% no-repeat,
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(99, 102, 241, 0.15) 50%,
+            rgba(255, 255, 255, 0.03) 100%) 0 50px / 1000px 100% no-repeat,
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(99, 102, 241, 0.15) 50%,
+            rgba(255, 255, 255, 0.03) 100%) 0 100px / 800px 100% no-repeat;
+    background-size: 1000px 36px, 1000px 36px, 800px 36px;
+    background-position: 0 0, 0 50px, 0 100px;
+    background-repeat: no-repeat;
+    border-radius: 18px;
+    animation: shimmer 1.5s infinite;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) 0 0 / 100% 36px,
+        linear-gradient(#fff 0 0) 0 50px / 100% 36px,
+        linear-gradient(#fff 0 0) 0 100px / 80% 36px;
+    -webkit-mask-repeat: no-repeat;
+    mask:
+        linear-gradient(#fff 0 0) 0 0 / 100% 36px,
+        linear-gradient(#fff 0 0) 0 50px / 100% 36px,
+        linear-gradient(#fff 0 0) 0 100px / 80% 36px;
+    mask-repeat: no-repeat;
+}
+
+/* Subheadline skeleton */
+.hero-content.loading .subheadline {
+    position: relative;
+}
+
+.hero-content.loading .subheadline::before {
+    content: '';
+    position: absolute;
+    top: 220px;
+    left: 0;
+    width: 90%;
+    height: 20px;
+    border-radius: 10px;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(99, 102, 241, 0.12) 50%,
+            rgba(255, 255, 255, 0.03) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+.hero-content.loading .subheadline::after {
+    content: '';
+    position: absolute;
+    top: 250px;
+    left: 0;
+    width: 70%;
+    height: 20px;
+    border-radius: 10px;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(99, 102, 241, 0.12) 50%,
+            rgba(255, 255, 255, 0.03) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Button skeletons */
+.hero-content.loading .hero-actions::before {
+    content: '';
+    position: absolute;
+    top: 310px;
+    left: 0;
+    width: 160px;
+    height: 48px;
+    border-radius: 24px;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(99, 102, 241, 0.15) 50%,
+            rgba(255, 255, 255, 0.03) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+.hero-content.loading .hero-actions::after {
+    content: '';
+    position: absolute;
+    top: 310px;
+    left: 180px;
+    width: 140px;
+    height: 48px;
+    border-radius: 24px;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(99, 102, 241, 0.12) 50%,
+            rgba(255, 255, 255, 0.03) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* ============================================
+   3D MODEL SKELETON - IMPROVED
+   ============================================ */
+.model-loading-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.skeleton-loader {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Organic dragon skeleton shapes */
+.skeleton-shape {
+    position: absolute;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.02) 0%,
+            rgba(99, 102, 241, 0.2) 50%,
+            rgba(255, 255, 255, 0.02) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 50%;
+    filter: blur(1px);
+}
+
+.skeleton-main {
+    width: 140px;
+    height: 200px;
+    border-radius: 50% 50% 45% 45%;
+    z-index: 3;
+}
+
+.skeleton-wing-left {
+    width: 110px;
+    height: 90px;
+    border-radius: 60% 30% 30% 60%;
+    left: -35px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-25deg);
+    z-index: 2;
+    opacity: 0.8;
+}
+
+.skeleton-wing-right {
+    width: 110px;
+    height: 90px;
+    border-radius: 30% 60% 60% 30%;
+    right: -35px;
+    top: 50%;
+    transform: translateY(-50%) rotate(25deg);
+    z-index: 2;
+    opacity: 0.8;
+}
+
+.skeleton-tail {
+    width: 70px;
+    height: 110px;
+    border-radius: 40% 40% 60% 60%;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0.7;
+}
+
+/* Ambient glow */
+.skeleton-loader::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15), transparent 70%);
+    animation: pulse 2s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 0.7;
+    }
+}
+
+/* ============================================
+   PROJECT CARD SKELETON
+   ============================================ */
+.project-card.skeleton {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+}
+
+.project-card.skeleton .card-image-wrapper {
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.02) 0%,
+            rgba(99, 102, 241, 0.12) 50%,
+            rgba(255, 255, 255, 0.02) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 12px 12px 0 0;
+}
+
+.project-card.skeleton .card-title,
+.project-card.skeleton .card-description,
+.project-card.skeleton .card-tags,
+.project-card.skeleton .card-link {
+    opacity: 0;
+}
+
+.project-card.skeleton .card-content {
+    position: relative;
+}
+
+/* Title skeleton */
+.project-card.skeleton .card-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%;
+    height: 22px;
+    border-radius: 11px;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(99, 102, 241, 0.15) 50%,
+            rgba(255, 255, 255, 0.03) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Description skeleton - multiple lines */
+.project-card.skeleton .card-content::after {
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, rgba(99, 102, 241, 0.12) 50%, rgba(255, 255, 255, 0.03) 100%) 0 0,
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, rgba(99, 102, 241, 0.12) 50%, rgba(255, 255, 255, 0.03) 100%) 0 20px,
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, rgba(99, 102, 241, 0.12) 50%, rgba(255, 255, 255, 0.03) 100%) 0 40px;
+    background-size: 1000px 16px, 1000px 16px, 800px 16px;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    animation: shimmer 1.5s infinite;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) 0 0 / 100% 16px,
+        linear-gradient(#fff 0 0) 0 20px / 95% 16px,
+        linear-gradient(#fff 0 0) 0 40px / 70% 16px;
+    -webkit-mask-repeat: no-repeat;
+    mask:
+        linear-gradient(#fff 0 0) 0 0 / 100% 16px,
+        linear-gradient(#fff 0 0) 0 20px / 95% 16px,
+        linear-gradient(#fff 0 0) 0 40px / 70% 16px;
+    mask-repeat: no-repeat;
+}
+
+/* ============================================
+   PROFILE CARD SKELETON
+   ============================================ */
+.profile-card.skeleton .profile-avatar,
+.profile-card.skeleton h3,
+.profile-card.skeleton .profile-role,
+.profile-card.skeleton .profile-bio {
+    opacity: 0;
+}
+
+/* Avatar circle */
+.profile-card.skeleton::before {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.03) 0%,
+            rgba(99, 102, 241, 0.15) 50%,
+            rgba(255, 255, 255, 0.03) 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Text lines */
+.profile-card.skeleton::after {
+    content: '';
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 80px;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, rgba(99, 102, 241, 0.15) 50%, rgba(255, 255, 255, 0.03) 100%) 0 0,
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, rgba(99, 102, 241, 0.12) 50%, rgba(255, 255, 255, 0.03) 100%) 0 30px,
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, rgba(99, 102, 241, 0.12) 50%, rgba(255, 255, 255, 0.03) 100%) 0 50px;
+    background-size: 1000px 20px, 1000px 16px, 800px 16px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    animation: shimmer 1.5s infinite;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) 0 0 / 100% 20px,
+        linear-gradient(#fff 0 0) 0 30px / 90% 16px,
+        linear-gradient(#fff 0 0) 0 50px / 70% 16px;
+    -webkit-mask-repeat: no-repeat;
+    mask:
+        linear-gradient(#fff 0 0) 0 0 / 100% 20px,
+        linear-gradient(#fff 0 0) 0 30px / 90% 16px,
+        linear-gradient(#fff 0 0) 0 50px / 70% 16px;
+    mask-repeat: no-repeat;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 768px) {
+    .navbar.loading::after {
+        display: none;
+    }
+
+    .hero-content.loading::after {
+        height: 100px;
+        background-size: 1000px 30px, 1000px 30px, 800px 30px;
+        background-position: 0 0, 0 40px, 0 75px;
+        -webkit-mask:
+            linear-gradient(#fff 0 0) 0 0 / 100% 30px,
+            linear-gradient(#fff 0 0) 0 40px / 100% 30px,
+            linear-gradient(#fff 0 0) 0 75px / 80% 30px;
+        mask:
+            linear-gradient(#fff 0 0) 0 0 / 100% 30px,
+            linear-gradient(#fff 0 0) 0 40px / 100% 30px,
+            linear-gradient(#fff 0 0) 0 75px / 80% 30px;
+    }
+
+    .hero-content.loading .hero-actions::before,
+    .hero-content.loading .hero-actions::after {
+        width: 100%;
+        max-width: 300px;
+        left: 0;
+    }
+
+    .hero-content.loading .hero-actions::after {
+        top: 370px;
+    }
+
+    .skeleton-loader {
+        width: 280px;
+        height: 280px;
+    }
+
+    .skeleton-main {
+        width: 110px;
+        height: 160px;
+    }
+
+    .skeleton-wing-left,
+    .skeleton-wing-right {
+        width: 85px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skeleton-loader {
+        width: 220px;
+        height: 220px;
+    }
+
+    .skeleton-main {
+        width: 90px;
+        height: 130px;
+    }
+
+    .skeleton-wing-left,
+    .skeleton-wing-right {
+        width: 70px;
+        height: 55px;
+    }
+
+    .skeleton-tail {
+        width: 50px;
+        height: 80px;
+    }
+}
