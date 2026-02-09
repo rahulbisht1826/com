@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Creative Developer</title>
+    <meta name="description"
+        content="Portfolio of a Creative Developer specializing in modern web design, AI integration, and user experience.">
+    <meta name="keywords" content="Portfolio, Web Developer, AI, Design, Projects, About Me">
+    <meta name="author" content="Your Name">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:title" content="Portfolio | Creative Developer">
+    <meta property="og:description" content="Building aesthetic & functional digital experiences.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="bg-gradient-noise"></div>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-symbol">&lt;/&gt;</span> Portfolio
+            </a>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#projects" class="nav-link">Work</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link btn-primary">Let's Talk</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge">Available for Work</div>
+                    <h1 class="headline">Building <span class="gradient-text">Digital Products</span> that matter.</h1>
+                    <p class="subheadline">I'm a creative developer focused on crafting clean, user-friendly experiences
+                        with modern technology.</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-filled">View Projects <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#about" class="btn btn-outline">About Me</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <model-viewer src="3d_assets/fantasydragon3dmodel.glb" alt="A 3D fantasy dragon" auto-rotate
+                        camera-controls disable-zoom shadow-intensity="1" camera-orbit="45deg 55deg 2.5m"
+                        field-of-view="30deg" class="hero-model-viewer">
+                    </model-viewer>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+                <span>Scroll</span>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Selected Work</h2>
+                    <p class="section-subtitle">A showcase of my recent technical and creative endeavors.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card">
+                        <div class="card-image-wrapper">
+                            <div class="card-image noise-overlay"
+                                style="background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);"></div>
+                            <div class="card-links">
+                                <a href="#" title="View Code"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" title="Live Demo"><i class="fa-solid fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                            </div>
+                            <h3 class="card-title">E-Commerce Platform</h3>
+                            <p class="card-description">A full-stack shopping experience with real-time inventory
+                                management and secure payment processing.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card">
+                        <div class="card-image-wrapper">
+                            <div class="card-image noise-overlay"
+                                style="background: linear-gradient(135deg, #3b82f6 0%, #14b8a6 100%);"></div>
+                            <div class="card-links">
+                                <a href="#" title="View Code"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" title="Live Demo"><i class="fa-solid fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="tag">Python</span>
+                                <span class="tag">AI/ML</span>
+                            </div>
+                            <h3 class="card-title">AI Analytics Dashboard</h3>
+                            <p class="card-description">Predictive analytics interface visualizing complex datasets with
+                                machine learning models.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card">
+                        <div class="card-image-wrapper">
+                            <div class="card-image noise-overlay"
+                                style="background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);"></div>
+                            <div class="card-links">
+                                <a href="#" title="View Code"><i class="fa-brands fa-github"></i></a>
+                                <a href="#" title="Live Demo"><i class="fa-solid fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-meta">
+                                <span class="tag">HTML/SCSS</span>
+                                <span class="tag">Design</span>
+                            </div>
+                            <h3 class="card-title">Modern Portfolio V1</h3>
+                            <p class="card-description">A responsive, accessible, and performant personal branding
+                                website.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="about-layout">
+                    <div class="about-content">
+                        <h2 class="section-title">About Me</h2>
+                        <div class="about-text">
+                            <p class="lead">I bridge the gap between <span class="highlight">design</span> and <span
+                                    class="highlight">engineering</span>.</p>
+                            <p>My journey started with a curiosity for how things work on the web. Today, I leverage
+                                modern frameworks and design principles to build applications that are fast, accessible,
+                                and visually striking.</p>
+                            <p>I believe in code that is clean, maintainable, and scalable. When I'm not coding, I'm
+                                exploring new design trends or contributing to open source.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <h4>Technologies I work with:</h4>
+                            <div class="tech-grid">
+                                <div class="tech-item"><i class="fa-brands fa-js"></i> JavaScript</div>
+                                <div class="tech-item"><i class="fa-brands fa-react"></i> React</div>
+                                <div class="tech-item"><i class="fa-brands fa-node"></i> Node.js</div>
+                                <div class="tech-item"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+                                <div class="tech-item"><i class="fa-brands fa-figma"></i> Figma</div>
+                                <div class="tech-item"><i class="fa-brands fa-git-alt"></i> Git</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <div class="profile-card glass-panel">
+                            <div class="profile-avatar"></div>
+                            <div class="profile-info">
+                                <h3>Your Name</h3>
+                                <span>Creative Developer</span>
+                                <div class="social-row">
+                                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact">
+            <div class="container contact-container">
+                <div class="glass-panel contact-card">
+                    <h2 class="section-title">Ready to start a project?</h2>
+                    <p>I'm currently available for freelance work and open to new opportunities.</p>
+                    <a href="mailto:hello@example.com" class="btn btn-filled btn-large">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <p>&copy; 2026 Your Name. Built with precision.</p>
+            </div>
+            <div class="footer-right">
+                <a href="#home">Home</a>
+                <a href="#projects">Work</a>
+                <a href="#about">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
