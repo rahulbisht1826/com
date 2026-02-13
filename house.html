@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Spear Model</title>
+    <!-- Preload critical resources -->
+    <link rel="preload" href="3d_assets/spear.glb" as="fetch" crossorigin="anonymous">
+    <link rel="preload" href="style.css" as="style">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="skeleton-loaders.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Model Viewer -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <style>
+        body,
+        html {
+            /* overflow: hidden; Removed to allow page zoom if needed */
+            min-height: 100vh;
+            background-color: var(--bg-dark);
+            touch-action: pan-x pan-y;
+            /* Allow standard browser gestures */
+        }
+
+        .full-screen-model {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            /* Dynamic viewport height */
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        model-viewer {
+            width: 100%;
+            height: 100%;
+            --poster-color: transparent;
+            background: radial-gradient(circle at center, rgba(99, 102, 241, 0.05) 0%, var(--bg-dark) 90%);
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .content-overlay {
+            position: fixed;
+            top: 6rem;
+            left: 2rem;
+            transform: none;
+            z-index: 100;
+            text-align: left;
+            opacity: 0;
+            transition: opacity 1s ease 0.5s;
+            pointer-events: none;
+        }
+
+        .content-overlay.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .info-card {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.25rem;
+            border-radius: 16px;
+            max-width: 320px;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-gradient-noise"></div>
+
+    <a href="index.html" class="btn btn-outline back-button">
+        <i class="fa-solid fa-arrow-left"></i> Back to Home
+    </a>
+
+    <div class="full-screen-model">
+        <model-viewer src="3d_assets/spear.glb" alt="A 3D spear model" auto-rotate camera-controls disable-zoom
+            interaction-prompt="none" camera-orbit="0deg 90deg 105%" loading="eager" reveal="auto"
+            style="width: 100%; height: 100%; --poster-color: transparent; touch-action: pinch-zoom;">
+
+            <div slot="poster" class="model-loading-container spear-skeleton">
+                <div class="skeleton-loader">
+                    <div class="skeleton-shape skeleton-shaft"></div>
+                    <div class="skeleton-shape skeleton-head"></div>
+                </div>
+            </div>
+        </model-viewer>
+    </div>
+
+    <div class="content-overlay">
+        <div class="info-card">
+            <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 0.5rem;">My Workspace</h2>
+            <p style="color: var(--text-secondary);">Explore the environment where creativity meets code. Content coming
+                soon...</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modelViewer = document.querySelector('model-viewer');
+            const overlay = document.querySelector('.content-overlay');
+
+            modelViewer.addEventListener('load', () => {
+                console.log('House model loaded');
+                overlay.classList.add('visible');
+
+                // Auto fade out after 5 seconds
+                setTimeout(() => {
+                    overlay.classList.remove('visible');
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+
+</html>

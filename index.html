@@ -17,7 +17,7 @@
     <meta property="og:description" content="Building aesthetic & functional digital experiences.">
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="3d_assets/fantasydragon3dmodel.glb" as="fetch" crossorigin="anonymous">
+    <link rel="preload" href="3d_assets/computer.glb" as="fetch" crossorigin="anonymous">
     <link rel="preload" href="style.css" as="style">
 
     <!-- DNS Prefetch for external resources -->
@@ -93,16 +93,15 @@
                 </div>
 
                 <div class="hero-visual">
-                    <model-viewer src="3d_assets/fantasydragon3dmodel.glb" alt="A 3D fantasy dragon" auto-rotate
-                        camera-controls disable-zoom shadow-intensity="1" camera-orbit="45deg 55deg 2.5m"
-                        field-of-view="30deg" loading="eager" reveal="auto" class="hero-model-viewer">
+                    <model-viewer src="3d_assets/computer.glb" alt="A 3D computer workspace" auto-rotate camera-controls
+                        disable-zoom shadow-intensity="1" camera-orbit="0deg 75deg 105%" field-of-view="30deg"
+                        loading="eager" reveal="auto" class="hero-model-viewer">
                         <!-- Skeleton loader -->
                         <div slot="poster" class="model-loading-container">
                             <div class="skeleton-loader">
-                                <div class="skeleton-shape skeleton-main"></div>
-                                <div class="skeleton-shape skeleton-wing-left"></div>
-                                <div class="skeleton-shape skeleton-wing-right"></div>
-                                <div class="skeleton-shape skeleton-tail"></div>
+                                <div class="skeleton-shape skeleton-monitor"></div>
+                                <div class="skeleton-shape skeleton-stand"></div>
+                                <div class="skeleton-shape skeleton-base"></div>
                             </div>
                         </div>
                     </model-viewer>
@@ -216,9 +215,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="about-image">
+                    <div class="about-visual">
+                        <model-viewer src="3d_assets/fantasydragon3dmodel.glb" alt="A 3D fantasy dragon" auto-rotate
+                            camera-controls disable-zoom shadow-intensity="1" camera-orbit="45deg 55deg 2m"
+                            field-of-view="30deg" loading="lazy" reveal="auto" class="dragon-model-viewer">
+                            <!-- Skeleton loader -->
+                            <div slot="poster" class="model-loading-container dragon-skeleton">
+                                <div class="skeleton-loader">
+                                    <div class="skeleton-shape skeleton-main"></div>
+                                    <div class="skeleton-shape skeleton-wing-left"></div>
+                                    <div class="skeleton-shape skeleton-wing-right"></div>
+                                    <div class="skeleton-shape skeleton-tail"></div>
+                                </div>
+                            </div>
+                        </model-viewer>
+
                         <div class="profile-card glass-panel">
-                            <div class="profile-avatar"></div>
                             <div class="profile-info">
                                 <h3>Your Name</h3>
                                 <span>Creative Developer</span>
@@ -226,6 +238,10 @@
                                     <a href="#"><i class="fa-brands fa-twitter"></i></a>
                                     <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                                     <a href="#"><i class="fa-brands fa-github"></i></a>
+                                </div>
+                                <div style="margin-top: 1.5rem;">
+                                    <a href="house.html" class="btn btn-outline btn-small">Know More <i
+                                            class="fa-solid fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>

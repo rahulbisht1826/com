@@ -3,7 +3,7 @@ let modelLoaded = false;
 let contentRevealed = false;
 
 document.addEventListener('DOMContentLoaded', () => {
-    const modelViewer = document.querySelector('model-viewer');
+    const modelViewers = document.querySelectorAll('model-viewer');
     const mainContent = document.querySelector('main');
     const header = document.querySelector('.navbar');
 
@@ -36,39 +36,40 @@ document.addEventListener('DOMContentLoaded', () => {
         projectCards.forEach(card => {
             card.classList.add('skeleton');
         });
-
-        // Add skeleton to profile card
-        const profileCard = document.querySelector('.profile-card');
-        if (profileCard) {
-            profileCard.classList.add('skeleton');
-        }
     }
 
     // 3D Model Loading Events
-    if (modelViewer) {
-        // Track loading progress
-        modelViewer.addEventListener('progress', (event) => {
-            const progress = event.detail.totalProgress;
-            console.log(`Loading 3D model: ${Math.round(progress * 100)}%`);
-        });
+    if (modelViewers.length > 0) {
+        modelViewers.forEach(viewer => {
+            // Track loading progress
+            viewer.addEventListener('progress', (event) => {
+                const progress = event.detail.totalProgress;
+                console.log(`Loading 3D model (${viewer.src}): ${Math.round(progress * 100)}%`);
+            });
 
-        // Model loaded successfully
-        modelViewer.addEventListener('load', () => {
-            console.log('3D model loaded successfully');
-            modelLoaded = true;
-            modelViewer.classList.add('loaded');
+            // Model loaded successfully
+            viewer.addEventListener('load', () => {
+                console.log(`3D model loaded successfully: ${viewer.src}`);
+                viewer.classList.add('loaded');
 
-            // Wait a brief moment to appreciate the model, then reveal content
-            setTimeout(() => {
-                revealContent();
-            }, 300);
-        });
+                // If this is the hero model (computer), reveal main content
+                if (viewer.src.includes('computer.glb')) {
+                    modelLoaded = true;
+                    // Wait a brief moment to appreciate the model, then reveal content
+                    setTimeout(() => {
+                        revealContent();
+                    }, 300);
+                }
+            });
 
-        // Handle errors - still reveal content even if model fails
-        modelViewer.addEventListener('error', (event) => {
-            console.error('Error loading 3D model:', event);
-            modelLoaded = true;
-            revealContent();
+            // Handle errors - still reveal content even if model fails
+            viewer.addEventListener('error', (event) => {
+                console.error('Error loading 3D model:', event);
+                if (viewer.src.includes('computer.glb')) {
+                    modelLoaded = true;
+                    revealContent();
+                }
+            });
         });
     } else {
         // If no model viewer, reveal content immediately
@@ -116,14 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.classList.remove('skeleton');
             }, 500 + (index * 80));
         });
-
-        // Remove skeleton from profile card
-        const profileCard = document.querySelector('.profile-card');
-        if (profileCard) {
-            setTimeout(() => {
-                profileCard.classList.remove('skeleton');
-            }, 700);
-        }
     }
 
     // Hamburger Menu Logic
